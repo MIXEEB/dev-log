@@ -69,3 +69,30 @@ In the world of blockchain development, every challenge is an opportunity to lea
 This revised version maintains the essence of your original content while improving structure, readability, and grammar.
 
 
+code:
+export const getSendTxParams = ({ abi, params, options, contractOptions, }) => {
+    var _a, _b;
+    const deploymentCall = (_b = (_a = options === null || options === void 0 ? void 0 : options.input) !== null && _a !== void 0 ? _a : options === null || options === void 0 ? void 0 : options.data) !== null && _b !== void 0 ? _b : contractOptions.input;
+    if (!deploymentCall && !(options === null || options === void 0 ? void 0 : options.to) && !contractOptions.address) {
+        throw new Web3ContractError('Contract address not specified');
+    }
+    if (!(options === null || options === void 0 ? void 0 : options.from) && !contractOptions.from) {
+        throw new Web3ContractError('Contract "from" address not specified');
+    }
+    let txParams = mergeDeep({
+        to: contractOptions.address,
+        gas: contractOptions.gas,
+        gasPrice: contractOptions.gasPrice,
+        from: contractOptions.from,
+        input: contractOptions.input,
+        maxPriorityFeePerGas: contractOptions.maxPriorityFeePerGas,
+        maxFeePerGas: contractOptions.maxFeePerGas,
+    }, options);
+    if (!txParams.input || abi.type === 'constructor') {
+        txParams = Object.assign(Object.assign({}, txParams), { input: encodeMethodABI(abi, params, txParams.input) });
+    }
+    if (txParams.input && !txParams.data) {
+        txParams = Object.assign(Object.assign({}, txParams), { data: encodeMethodABI(abi, params, txParams.input) });
+    }
+    return txParams;
+};
