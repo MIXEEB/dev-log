@@ -4,5 +4,8 @@
     <img class="logo" src="./assets/logo.png"/>
   </div>
 
-  <span *ngFor="let route of routes" class="menu-item" (click)="navigate(route.path || '')">{{route.title}}</span>
+  <span *ngFor="let route of routes" 
+    class="menu-item"
+    (click)="navigate(route.path || '')">
+    {{route.title}}</span>
 </div>

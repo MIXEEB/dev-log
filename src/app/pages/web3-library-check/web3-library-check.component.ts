@@ -7,4 +7,25 @@ import { Component } from '@angular/core';
 })
 export class Web3LibraryCheckComponent {
 
+  codeSnippetContractSend =
+  `const createMiniature = (this.contract.methods as any).createMiniature(
+    miniature.name,
+    miniature.description,
+    miniature.miniatureUrl,
+    miniature.price
+  )
+  
+  const options = {
+    from: this.connectedAccount,
+    to: this.contractAddress,
+    gas: 3000000
+  }
+
+  createMiniature.send({
+    from: this.connectedAccount,
+    to: this.contractAddress,
+    gas: 3000000
+  }).then(console.log)
+  `;
+
 }

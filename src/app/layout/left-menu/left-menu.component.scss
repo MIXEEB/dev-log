@@ -15,10 +15,15 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  padding: 12px;
 }
 
 .menu-item:hover {
-  color: #007bff;
+  color: #f99e1c;
+}
+
+.menu-item-selected {
+  color: #f99e1c;
 }
 
 .logo {
