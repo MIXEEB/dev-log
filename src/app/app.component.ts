@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dev-log';
+  
+  code:string = 
+  `
+    let i = 0;
+    for(i = 0; i < 10; i++) {
+      console.log(i);
+    }
+  `
+
 }
