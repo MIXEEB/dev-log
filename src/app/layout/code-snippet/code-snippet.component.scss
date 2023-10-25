@@ -1,5 +1,5 @@
 .code-snippet {
-  background-color: #f6e1c4;
+  background-color: rgb(25, 25, 26);
   border-radius: 5px;
   padding: 1rem;
   font-size: 1rem;
@@ -9,6 +9,7 @@
   code {
     display: block;
     white-space: pre-wrap;
+    color: rgba(255, 255, 255, 0.5);
   }
   
   .language {
