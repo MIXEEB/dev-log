@@ -5,20 +5,23 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    position: fixed;
     
     top: 0;
     left: 0;
     z-index: 1;
     padding-top: 56px;
     background-color: #c7dfea;
+
+    width: 320px;
   }
 
   .main {
-    padding-top: 56px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;;
+    width: 100%;
+    
+    padding-left:320px;
   }
 }
