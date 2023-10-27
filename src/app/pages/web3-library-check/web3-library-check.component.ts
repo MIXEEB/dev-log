@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./web3-library-check.component.scss', '../styles.scss']
 })
 export class Web3LibraryCheckComponent {
+
+  isMobile: boolean = false;
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit() {
+    this.breakpointObserver.observe([
+      Breakpoints.HandsetPortrait,
+      Breakpoints.HandsetLandscape
+    ]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
+  }
 
   codeSnippedDocsSample = 
   `myContract.methods.myMethod(123).send({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})

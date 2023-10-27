@@ -1,14 +1,20 @@
 <div class="layout">
-    <nav class="sidebar">
+  <div class="header-panel" >
+    <div class="hamburger" (click)="toggleMenu()">
+      <!--<span>Toggle</span>-->
+      <img src="./assets/hamburger.png" />
+    </div>
+  </div>
+    <nav class="sidebar" *ngIf="showMenu">
       <div class="sidebar-sticky">
+        
         <!-- Left menu panel content goes here -->
-        <app-left-menu></app-left-menu>
+        <app-left-menu ></app-left-menu>
       </div>
     </nav>
-    <main role="main" class="main">
+    <main role="main" class="main" [ngClass]="{'main-desktop' : !isMobile}">
       <!-- Right content space content goes here -->
       <router-outlet>
       </router-outlet>
     </main>
 </div>
-
