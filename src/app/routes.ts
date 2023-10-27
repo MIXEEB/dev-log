@@ -8,7 +8,7 @@ export const routes: Routes = [{
     component: WelcomeComponent
   },
   {
-    title: 'Web3 Library Check',
+    title: 'Missing transaction data.js',
     path: 'web3-lib-check',
     component: Web3LibraryCheckComponent
   }
