@@ -1,8 +1,6 @@
 .layout {
   display: flex;
 
-  
-
     .sidebar {
       display: flex;
       flex-direction: column;
@@ -28,10 +26,6 @@
       align-items: center;
       width: 100%;
       padding-top:56px
-    }
-
-    .main-desktop {
-      padding-left: 320px;
     }
 
     .menu-toggle {
@@ -89,4 +83,8 @@
         }
       }
     }
+  }
+
+  .main-desktop {
+    padding-left: 320px;
   }

@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class CodeSnippetComponent {
 
   @Input() code!: string;
+  @Input() isMobile: boolean = false;
 
 }

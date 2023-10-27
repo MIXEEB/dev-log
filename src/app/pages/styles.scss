@@ -3,12 +3,6 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
  
-  .desktop{
-    padding: 20px 200px;
-    max-width: 768px;
-  }
-  
-
   h2 {
     font-size: 24px;
     font-weight: bold;
@@ -33,4 +27,9 @@
     font-size: 14px;
     color: #666;
   }
+}
+
+.desktop{
+  padding: 20px 200px;
+  max-width: 768px;
 }
