@@ -22,6 +22,9 @@ export class PageLayoutComponent implements OnInit {
       Breakpoints.HandsetLandscape
     ]).subscribe(result => {
       this.isMobile = result.matches;
+      if(this.isMobile) {
+        this.showMenu = false;
+      }
     });
   }
 }
